@@ -1,0 +1,5 @@
+# Ignoring the following files
+
+# dependencies
+/node_modules
+
