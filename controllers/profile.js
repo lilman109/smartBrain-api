@@ -6,7 +6,6 @@ const profileHandler = (request, response, db) => {
       response.json(user[0]);
     } else {
       response.status(400).json('unable to get profile')
-      .catch(err => response.status(400).json('unable to get profile'));
     }
   })
   .catch(err => response.status(400).json('unable to get profile'));
