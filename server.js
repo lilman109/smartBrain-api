@@ -37,5 +37,5 @@ app.put('/image', (request, response) => image.imageHandler(request, response, d
 app.post('/imageUrl', (request, response) => image.apiHandler(request, response));
 
 app.listen(process.env.PORT || 3000), ()=> {
-  console.log('its working');
-});
+  console.log('app is running on port 3000');
+};
