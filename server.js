@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const knex = require('knex');
 const bcrypt = require('bcrypt-nodejs');
-
+const { Client } = require('pg');
 const register = require('./controllers/register');
 const signIn = require('./controllers/signin');
 const profile = require('./controllers/profile');
@@ -11,12 +11,10 @@ const image = require('./controllers/image');
 const db = knex({
     client: 'pg',
     connection: {
-      host : '127.0.0.1',
-      user : 'akirayoshida',
-      password : '',
-      database : 'smart-brain'
-    }
-  });
+      connectionString: process.env.DATABASE_URL,
+      ssl: true,
+  }
+});
 
 const app = express();
 
